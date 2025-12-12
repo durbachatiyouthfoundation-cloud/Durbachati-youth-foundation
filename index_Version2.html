@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Durbachati Youth Foundation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    :root {
+      --green: #8DC63F;
+      --blue: #005B96;
+      --blue-dark: #003f6b;
+      --light-bg: #f5f8fb;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #1f2933;
+      background: var(--light-bg);
+    }
+
+    /* Top bar & logo */
+    .top-bar {
+      background: var(--blue-dark);
+      color: #fff;
+      font-size: 13px;
+      padding: 6px 15px;
+      text-align: center;
+    }
+
+    header {
+      background: #ffffff;
+      border-bottom: 3px solid var(--green);
+    }
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 15px;
+      gap: 15px;
+    }
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-wrap img {
+      height: 70px;
+      width: auto;
+    }
+    .logo-text-main {
+      font-size: 22px;
+      font-weight: bold;
+      color: var(--green);
+      letter-spacing: 2px;
+    }
+    .logo-text-sub {
+      font-size: 12px;
+      color: var(--blue-dark);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    nav {
+      background: var(--blue);
+    }
+    nav ul {
+      list-style: none;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    nav li { flex: 1 1 auto; }
+    nav a {
+      display: block;
+      padding: 10px 15px;
+      color: #fff;
+      text-decoration: none;
+      text-align: center;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    nav a:hover {
+      background: var(--green);
+      color: #003049;
+    }
+
+    /* Hero section */
+    .hero {
+      background: linear-gradient(135deg, var(--blue-dark), var(--blue));
+      color: #fff;
+      padding: 50px 15px 40px;
+    }
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 30px;
+    }
+    .hero-text {
+      flex: 1 1 260px;
+    }
+    .hero-text h1 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+    .hero-text h1 span {
+      color: var(--green);
+    }
+    .hero-text p {
+      font-size: 15px;
+      margin-bottom: 15px;
+      max-width: 520px;
+    }
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 9px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid transparent;
+    }
+    .btn-primary {
+      background: var(--green);
+      color: #003049;
+      font-weight: bold;
+    }
+    .btn-primary:hover {
+      background: #a7da5f;
+    }
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      border-color: #fff;
+    }
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.12);
+    }
+    .hero-highlight {
+      font-size: 13px;
+      margin-top: 8px;
+      font-style: italic;
+    }
+
+    .hero-side {
+      flex: 1 1 260px;
+      text-align: center;
+    }
+    .hero-side-box {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 15px;
+      color: #1f2933;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    .hero-side-box h3 {
+      font-size: 16px;
+      margin-bottom: 6px;
+      color: var(--blue-dark);
+    }
+    .hero-side-box p {
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+    .hero-side-box strong { color: var(--green); }
+
+    /* Main sections */
+    .section {
+      max-width: 1100px;
+      margin: 25px auto;
+      padding: 0 15px;
+    }
+    .section h2 {
+      font-size: 22px;
+      margin-bottom: 6px;
+      color: var(--blue-dark);
+    }
+    .section-sub {
+      font-size: 13px;
+      color: #6b7280;
+      margin-bottom: 15px;
+    }
+
+    .cards-3 {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    .card {
+      flex: 1 1 260px;
+      background: #ffffff;
+      border-radius: 8px;
+      padding: 14px;
+      box-shadow: 0 2px 6px rgba(15,23,42,0.08);
+      border-top: 4px solid var(--green);
+    }
+    .card h3 {
+      font-size: 16px;
+      color: var(--blue-dark);
+      margin-bottom: 6px;
+    }
+    .card p {
+      font-size: 14px;
+    }
+    .card ul {
+      margin-left: 18px;
+      margin-top: 5px;
+      font-size: 14px;
+    }
+
+    .two-col {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .two-col > div {
+      flex: 1 1 260px;
+      background: #ffffff;
+      border-radius: 8px;
+      padding: 14px;
+      box-shadow: 0 2px 6px rgba(15,23,42,0.06);
+    }
+
+    .team-list p {
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 30px;
+      background: #0b1727;
+      color: #cbd5f5;
+      padding: 18px 15px;
+      font-size: 13px;
+    }
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    footer a {
+      color: var(--green);
+      text-decoration: none;
+    }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 720px) {
+      .header-inner { flex-direction: column; align-items: flex-start; }
+      .hero-inner { flex-direction: column; }
+      nav li { flex: 1 1 50%; }
+    }
+    @media (max-width: 480px) {
+      nav li { flex: 1 1 100%; }
+      .logo-wrap img { height: 55px; }
+      .hero-text h1 { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  Estd. 01-05-2022 • Banerjee Bazar, Durbachati, Pathar Pratima, South 24 Parganas, West Bengal - 743347
+</div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-wrap">
+      <!-- Use your logo file here -->
+      <img src="1000398742.jpg" alt="Durbachati Youth Foundation logo">
+      <div>
+        <div class="logo-text-main">DURBACHATI</div>
+        <div class="logo-text-sub">Youth Foundation • We Are With The Helpless</div>
+      </div>
+    </div>
+    <div style="text-align:right; font-size:13px;">
+      <div><strong>President:</strong> Manjur Alam Khan</div>
+      <div><strong>Phone:</strong> 8089683220</div>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#hero">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#programs">Programs</a></li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#donate">Donate</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section id="hero" class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <h1>Standing with the <span>Helpless</span> in Durbachati</h1>
+      <p>
+        Durbachati Youth Foundation is a grassroots NGO led by local youth, working for
+        education, emergency medical help, and student support in South 24 Parganas.
+      </p>
+      <p class="hero-highlight">
+        “শিক্ষা, স্বাস্থ্য ও ছাত্র সহায়তায় একসাথে এগিয়ে চলি”
+      </p>
+      <div class="hero-buttons">
+        <a href="#donate" class="btn btn-primary">Donate Now</a>
+        <a href="#programs" class="btn btn-outline">View Our Work</a>
+      </div>
+    </div>
+
+    <div class="hero-side">
+      <div class="hero-side-box">
+        <h3>Recent Activity</h3>
+        <p>
+          Donation and support at local schools to help students with essential educational and
+          daily-use materials, organised by our volunteers.
+        </p>
+        <p><strong>Focus:</strong> Education • Emergency Medical Help • Student Support</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main>
+
+  <section id="about" class="section">
+    <h2>About Durbachati Youth Foundation</h2>
+    <div class="section-sub">
+      A community-based initiative formed on 01 May 2022 to uplift vulnerable children, youth and families.
+    </div>
+    <div class="two-col">
+      <div>
+        <h3>Our Mission</h3>
+        <p>
+          To ensure that no child in Durbachati and nearby areas is deprived of education,
+          basic healthcare or support in times of crisis.
+        </p>
+      </div>
+      <div>
+        <h3>Our Approach</h3>
+        <p>
+          Local volunteers identify genuine needs at village level, mobilise resources,
+          and deliver direct help to families and students.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="programs" class="section">
+    <h2>Key Programs</h2>
+    <div class="section-sub">
+      Practical, need-based support for students, patients and vulnerable families.
+    </div>
+
+    <div class="cards-3">
+      <div class="card">
+        <h3>Education Support</h3>
+        <ul>
+          <li>Books, bags and stationery for school and college students.</li>
+          <li>Tuition help and guidance for examinations.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Emergency Medical Help</h3>
+        <ul>
+          <li>Support in arranging treatment and medicine for needy patients.</li>
+          <li>Connecting families with donors during medical emergencies.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Student & Youth Welfare</h3>
+        <ul>
+          <li>Counselling and motivation for students.</li>
+          <li>Youth volunteering and community service activities.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="team" class="section">
+    <h2>Our Team</h2>
+    <div class="section-sub">Core office bearers of Durbachati Youth Foundation.</div>
+    <div class="two-col team-list">
+      <div>
+        <p><strong>President:</strong> Manjur Alam Khan • 8089683220</p>
+        <p><strong>Vice President:</strong> Hafizur Khan • 97464 55828</p>
+      </div>
+      <div>
+        <p><strong>Secretary:</strong> Priyaranjan Naskar • 81677 24683</p>
+        <p><strong>Treasurer:</strong> Sk Azahar • 62822 28021</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="donate" class="section">
+    <h2>Support Our Work</h2>
+    <div class="section-sub">
+      Every contribution helps a child stay in school or a patient receive timely medical help.
+    </div>
+    <div class="two-col">
+      <div>
+        <h3>Donate via UPI</h3>
+        <p><strong>UPI ID:</strong> 8089683220@ptsbi</p>
+        <p>
+          Scan the QR code (on the Donate page or poster) with any UPI app and confirm that
+          the receiver name is <strong>Manjur Alam Khan</strong> before sending.
+        </p>
+      </div>
+      <div>
+        <h3>Contact for Donations</h3>
+        <p>President (Donation & queries): 8089683220</p>
+        <p>Vice President: 97464 55828</p>
+        <p>
+          Watch our activities on YouTube:
+          <a href="https://youtube.com/@durbachatiyouthfoundation?si=ksrwEHrwukv8RMvs" target="_blank">
+            @durbachatiyouthfoundation
+          </a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Contact & Address</h2>
+    <div class="section-sub">Reach out to us for support, volunteering or partnerships.</div>
+    <div class="two-col">
+      <div>
+        <p><strong>Address:</strong><br>
+          Banerjee Bazar, Durbachati,<br>
+          Pathar Pratima, South 24 Parganas,<br>
+          West Bengal - 743347
+        </p>
+        <p><strong>General Enquiry:</strong> 8089683220 / 97464 55828</p>
+      </div>
+      <div>
+        <p><strong>Email (suggested):</strong> dyf.durbachati@gmail.com</p>
+        <p style="font-size:13px;">
+          Add this email ID after creating it, and connect your contact form to it using a simple
+          form service or server script. [web:33][web:39]
+        </p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>&copy; 2022–2025 Durbachati Youth Foundation. All rights reserved.</div>
+    <div>“We Are With The Helpless”</div>
+  </div>
+</footer>
+
+</body>
+</html>
